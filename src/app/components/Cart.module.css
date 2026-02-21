@@ -125,7 +125,48 @@
     justify-content: space-between;
     font-size: 1.25rem;
     font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.paymentMethods {
     margin-bottom: 1.5rem;
+}
+
+.paymentLabel {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.methodGroup {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.methodBtn {
+    flex: 1;
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--foreground);
+    transition: all 0.2s;
+}
+
+.methodBtn:hover {
+    border-color: var(--primary);
+}
+
+.activeMethod {
+    background-color: rgba(99, 102, 241, 0.1);
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.checkoutAction {
+    min-height: 48px;
 }
 
 .checkoutBtn {
