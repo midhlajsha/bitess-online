@@ -34,32 +34,8 @@ export default function Cart() {
     if (!isCartOpen) return null;
 
     const handleStripeCheckout = async () => {
-        try {
-            const response = await fetch('/api/checkout_sessions', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ items }),
-            });
-
-            const data = await response.json();
-
-            if (data.error) {
-                console.log('Stripe API error (expected with mock keys). Redirecting manually to success page for demo purposes:', data.error);
-                window.location.href = '/success';
-                return;
-            }
-
-            const { sessionId } = data;
-            const stripe = await stripePromise;
-
-            if (stripe && sessionId) {
-                // @ts-ignore
-                await stripe.redirectToCheckout({ sessionId });
-            }
-        } catch (err) {
-            console.error('Checkout error:', err);
-            window.location.href = '/success';
-        }
+        // Redirecting to the specific Stripe Payment Link provided by the user
+        window.location.href = 'https://buy.stripe.com/test_5kQ00j3z3b42dGm5ob9k400';
     };
 
     const handleRazorpayCheckout = async () => {
