@@ -7,7 +7,7 @@ import Cart from './components/Cart';
 const outfit = Outfit({ subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
-  title: 'ANTIX | Premium E-commerce',
+  title: 'Bites.online | Premium E-commerce',
   description: 'A stellar e-commerce experience',
 };
 
