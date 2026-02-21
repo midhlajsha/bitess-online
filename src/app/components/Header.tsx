@@ -12,7 +12,7 @@ export default function Header() {
     return (
         <header className={styles.header}>
             <div className={`container ${styles.nav}`}>
-                <a href="/" className={styles.logo}>Bites.online</a>
+                <a href="/" className={styles.logo}>Bitess</a>
 
                 <div className={styles.navLinks}>
                     <a href="#products" className={styles.link}>Shop</a>
