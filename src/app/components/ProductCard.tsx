@@ -7,6 +7,7 @@ import { useCart } from '../context/CartContext';
 
 export default function ProductCard({ product }: { product: Product }) {
     const { addToCart } = useCart();
+    const originalPrice = product.price * 1.5;
 
     return (
         <div className={styles.card}>
@@ -15,24 +16,28 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
             <div className={styles.content}>
                 <h3 className={styles.name}>{product.name}</h3>
-                <div className={styles.rating}>
-                    <span className={styles.stars}>★★★★☆</span>
-                    <span className={styles.count}>2,384</span>
-                </div>
                 <div className={styles.pricing}>
-                    <span className={styles.currency}>$</span>
-                    <span className={styles.priceWhole}>{Math.floor(product.price)}</span>
-                    <span className={styles.priceFraction}>{(product.price % 1).toFixed(2).split('.')[1]}</span>
+                    <span className={styles.price}>${product.price.toFixed(2)}</span>
+                    <span className={styles.originalPrice}>${originalPrice.toFixed(2)}</span>
+                    <span className={styles.onwards}>onwards</span>
                 </div>
-                <div className={styles.prime}>
-                    <span className={styles.primeCheck}>✓</span>
-                    <span className={styles.primeText}>prime</span>
-                    <span className={styles.deliveryText}>FREE delivery Tomorrow</span>
+                <div className={styles.deliveryBadge}>
+                    <span className={styles.freeDelivery}>Free Delivery</span>
                 </div>
-                <button className={`btn btn-primary ${styles.addToCart}`} onClick={() => addToCart(product)}>
+                <div className={styles.ratingRow}>
+                    <div className={styles.ratingBadge}>
+                        {product.rating} <span className={styles.starIcon}>★</span>
+                    </div>
+                    <span className={styles.reviews}>245 Reviews</span>
+                </div>
+                <button
+                    className={styles.addToCart}
+                    onClick={() => addToCart(product)}
+                >
                     Add to Cart
                 </button>
             </div>
         </div>
     );
 }
+

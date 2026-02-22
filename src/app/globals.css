@@ -1,27 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  /* Amazon-inspired Color Palette */
-  --amazon-blue: #131921;
-  --amazon-light-blue: #232f3e;
-  --amazon-yellow: #febd69;
-  --amazon-orange: #f3a847;
-  --amazon-gray: #eaeded;
-  --amazon-dark-gray: #0f1111;
-  --amazon-link: #007185;
+  /* Meesho-inspired Color Palette */
+  --meesho-pink: #9f2089;
+  --meesho-light-pink: #fde9f2;
+  --meesho-gray: #f8f8f8;
+  --meesho-dark-gray: #333333;
+  --meesho-text-muted: #666666;
+  --meesho-border: #e1e1e1;
+  --meesho-success: #038d63;
 
   --background: #ffffff;
-  --foreground: var(--amazon-dark-gray);
+  --foreground: var(--meesho-dark-gray);
   --surface: #ffffff;
-  --surface-alt: var(--amazon-gray);
-  --primary: #ffd814;
-  --primary-hover: #f7ca00;
-  --accent: var(--amazon-orange);
-  --text: var(--amazon-dark-gray);
-  --text-muted: #565959;
-  --border: #ddd;
-  --success: #007600;
+  --surface-alt: var(--meesho-gray);
+  --primary: var(--meesho-pink);
+  --primary-hover: #80186d;
+  --accent: var(--meesho-success);
+  --text: var(--meesho-dark-gray);
+  --text-muted: var(--meesho-text-muted);
+  --border: var(--meesho-border);
+  --success: var(--meesho-success);
 }
+
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -146,9 +147,7 @@ button {
   font-size: 1.5rem;
   font-weight: 800;
   letter-spacing: -0.05em;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--meesho-pink);
 }
 
 /* Animations */

@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+import { calculateTotal } from '@/lib/payment-utils';
 
 const PAYPAL_API_BASE = process.env.PAYPAL_API_BASE || 'https://api-m.sandbox.paypal.com';
 
@@ -6,10 +8,7 @@ async function generateAccessToken() {
     const clientId = process.env.PAYPAL_CLIENT_ID || 'mock_client_id';
     const appSecret = process.env.PAYPAL_APP_SECRET || 'mock_app_secret';
 
-    // In a real scenario without mock keys, this would fetch a real token
-    if (clientId === 'mock_client_id') {
-        return 'mock_access_token';
-    }
+    if (clientId === 'mock_client_id') return 'mock_access_token';
 
     const auth = Buffer.from(`${clientId}:${appSecret}`).toString('base64');
     const response = await fetch(`${PAYPAL_API_BASE}/v1/oauth2/token`, {
@@ -28,13 +27,22 @@ async function generateAccessToken() {
 export async function POST(req: Request) {
     try {
         const { items } = await req.json();
-        const total = items.reduce((sum: number, item: any) => sum + (item.price * item.quantity), 0);
+        const total = calculateTotal(items);
+
+        // 1. Create a Pending Order in the database
+        const order = await prisma.order.create({
+            data: {
+                total,
+                status: 'PENDING',
+                gateway: 'PAYPAL',
+                items: JSON.stringify(items),
+            },
+        });
 
         const accessToken = await generateAccessToken();
 
         if (accessToken === 'mock_access_token') {
-            // Return a mock order ID for demonstration
-            return NextResponse.json({ id: 'mock_paypal_order_123' });
+            return NextResponse.json({ id: 'mock_paypal_order_' + order.id });
         }
 
         const url = `${PAYPAL_API_BASE}/v2/checkout/orders`;
@@ -42,6 +50,7 @@ export async function POST(req: Request) {
             intent: 'CAPTURE',
             purchase_units: [
                 {
+                    reference_id: order.id,
                     amount: {
                         currency_code: 'USD',
                         value: total.toFixed(2),
@@ -66,3 +75,4 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: err.message }, { status: 500 });
     }
 }
+

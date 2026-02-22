@@ -34,8 +34,32 @@ export default function Cart() {
     if (!isCartOpen) return null;
 
     const handleStripeCheckout = async () => {
-        // Redirecting to the specific Stripe Payment Link provided by the user
-        window.location.href = 'https://buy.stripe.com/test_5kQ00j3z3b42dGm5ob9k400';
+        try {
+            const response = await fetch('/api/checkout_sessions', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ items }),
+            });
+
+            const data = await response.json();
+
+            if (data.error) {
+                console.log('Stripe API error. Redirecting to manual payment link:', data.error);
+                window.location.href = 'https://buy.stripe.com/test_5kQ00j3z3b42dGm5ob9k400';
+                return;
+            }
+
+            const { sessionId } = data;
+            const stripe = await stripePromise;
+
+            if (stripe && sessionId) {
+                // @ts-ignore
+                await stripe.redirectToCheckout({ sessionId });
+            }
+        } catch (err) {
+            console.error('Checkout error:', err);
+            window.location.href = 'https://buy.stripe.com/test_5kQ00j3z3b42dGm5ob9k400';
+        }
     };
 
     const handleRazorpayCheckout = async () => {
@@ -49,7 +73,7 @@ export default function Cart() {
             const order = await response.json();
 
             if (order.error) {
-                console.log('Razorpay API error. Redirecting manually to success page for demo purposes:', order.error);
+                console.log('Razorpay API error. Redirecting manually for demo purposes:', order.error);
                 window.location.href = '/success';
                 return;
             }
@@ -73,7 +97,7 @@ export default function Cart() {
                     });
                     const verifyData = await verifyRes.json();
                     if (verifyData.status === 'success') {
-                        window.location.href = '/success';
+                        window.location.href = `/success?order_id=${order.order_id}`;
                     } else {
                         alert('Payment verification failed');
                     }
@@ -89,15 +113,13 @@ export default function Cart() {
                 const rzp1 = new window.Razorpay(options);
                 rzp1.on('payment.failed', function (response: any) {
                     console.error('Payment Failed', response.error);
-                    // Mock fallback
                     if (options.key === 'mock_key_id') {
-                        window.location.href = '/success';
+                        window.location.href = `/success?order_id=${order.order_id}`;
                     }
                 });
                 rzp1.open();
             } else {
-                // Fallback for demo when script fails to load
-                window.location.href = '/success';
+                window.location.href = `/success?order_id=${order.order_id}`;
             }
         } catch (err) {
             console.error('Razorpay Checkout error:', err);
@@ -188,9 +210,9 @@ export default function Cart() {
                                                 body: JSON.stringify({ items }),
                                             });
                                             const data = await response.json();
-                                            if (data.id === 'mock_paypal_order_123') {
-                                                // Mock
-                                                window.location.href = '/success';
+                                            if (data.id.startsWith('mock_paypal_order_')) {
+                                                const orderId = data.id.replace('mock_paypal_order_', '');
+                                                window.location.href = `/success?order_id=${orderId}`;
                                                 return '';
                                             }
                                             return data.id;
@@ -208,10 +230,10 @@ export default function Cart() {
                                         }}
                                         onError={(err) => {
                                             console.error('PayPal Frontend Error:', err);
-                                            // Mock fallback
                                             window.location.href = '/success';
                                         }}
                                     />
+
                                 ) : (
                                     <button className={`btn btn-primary ${styles.checkoutBtn}`} onClick={handleCheckoutButton}>
                                         Checkout with {paymentMethod === 'stripe' ? 'Stripe' : 'Razorpay'}
