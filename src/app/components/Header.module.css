@@ -2,87 +2,172 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    padding: 1rem 0;
-    z-index: 50;
-    background: rgba(10, 10, 10, 0.7);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-    transition: all 0.3s ease;
+    background-color: var(--amazon-blue);
+    color: white;
 }
 
-@media (prefers-color-scheme: light) {
-    .header {
-        background: rgba(255, 255, 255, 0.7);
-    }
+.topNav {
+    padding: 0.5rem 0;
 }
 
-.nav {
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 1rem;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    gap: 1.5rem;
+}
+
+.leftSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .logo {
+    color: white;
     font-size: 1.5rem;
     font-weight: 800;
-    letter-spacing: -0.05em;
-    background: linear-gradient(135deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: inline-block;
+    text-decoration: none;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid transparent;
 }
 
-.navLinks {
-    display: none;
-    gap: 2rem;
+.logo:hover {
+    border-color: white;
 }
 
-@media (min-width: 768px) {
-    .navLinks {
-        display: flex;
-    }
+.location {
+    display: flex;
+    flex-direction: column;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid transparent;
+    cursor: pointer;
 }
 
-.link {
-    font-weight: 600;
-    color: var(--text-muted);
-    transition: color 0.2s;
+.location:hover {
+    border-color: white;
 }
 
-.link:hover {
-    color: var(--foreground);
+.searchBar {
+    flex: 1;
+    display: flex;
+    height: 40px;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.cartButton {
+.categorySelect {
+    background-color: #f3f3f3;
+    border: none;
+    border-right: 1px solid #ccc;
+    padding: 0 0.5rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #555;
+    border-radius: 4px 0 0 4px;
+}
+
+.searchInput {
+    flex: 1;
+    border: none;
+    padding: 0 0.75rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+.searchBtn {
+    background-color: var(--amazon-yellow);
+    border: none;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.searchBtn:hover {
+    background-color: var(--amazon-orange);
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navLinkItem {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+.navLinkItem:hover {
+    border-color: white;
+}
+
+.line1 {
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+.line2 {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.cartBtn {
+    background: none;
+    border: 1px solid transparent;
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+}
+
+.cartBtn:hover {
+    border-color: white;
+}
+
+.cartIconWrapper {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    color: var(--foreground);
-    transition: transform 0.2s;
 }
 
-.cartButton:hover {
-    transform: scale(1.1);
-    color: var(--primary);
-}
-
-.badge {
+.cartCount {
     position: absolute;
     top: 0;
-    right: 0;
-    background-color: var(--accent);
-    color: white;
-    font-size: 0.75rem;
+    right: 12px;
+    color: var(--amazon-orange);
     font-weight: 800;
-    width: 1.25rem;
-    height: 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    transform: translate(25%, -25%);
+    font-size: 1rem;
+}
+
+.cartText {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.subHeader {
+    background-color: var(--amazon-light-blue);
+    padding: 0.25rem 0;
+}
+
+.subLink {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid transparent;
+}
+
+.subLink:hover {
+    border-color: white;
 }

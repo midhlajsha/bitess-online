@@ -21,12 +21,10 @@ const mockProducts: Product[] = [
 
 export default function ProductGrid() {
     return (
-        <section id="products" className={styles.section}>
+        <section id="products" className={styles.productSection}>
             <div className="container">
-                <div className={styles.header}>
-                    <h2 className={styles.title}>Featured Products</h2>
-                    <p className={styles.subtitle}>Curated selection of our finest items.</p>
-                </div>
+                <h2 className={styles.title}>Results</h2>
+                <p className={styles.subtitle}>Check each product page for other buying options.</p>
                 <div className={styles.grid}>
                     {mockProducts.map(product => (
                         <ProductCard key={product.id} product={product} />

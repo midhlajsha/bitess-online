@@ -1,7 +1,6 @@
-.section {
-    padding: 6rem 0;
-    background-color: var(--surface);
-    position: relative;
+.productSection {
+    padding: 2rem 0;
+    background-color: white;
 }
 
 .header {
@@ -10,18 +9,20 @@
 }
 
 .title {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
-    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: var(--text);
 }
 
 .subtitle {
+    font-size: 0.85rem;
     color: var(--text-muted);
-    font-size: 1.125rem;
+    margin-bottom: 2rem;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
 }

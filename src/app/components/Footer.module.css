@@ -1,0 +1,84 @@
+.footer {
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+}
+
+.backToTop {
+    width: 100%;
+    padding: 1rem;
+    background-color: #37475a;
+    color: white;
+    border: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.backToTop:hover {
+    background-color: #485769;
+}
+
+.mainFooter {
+    background-color: var(--amazon-light-blue);
+    padding: 3rem 0;
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.colTitle {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.column ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+.column ul li a:hover {
+    text-decoration: underline;
+}
+
+.bottomFooter {
+    background-color: var(--amazon-blue);
+    padding: 2rem 0;
+    border-top: 1px solid #3a4553;
+}
+
+.logoRow {
+    display: flex;
+    justify-content: center;
+}
+
+.footerLogo {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.copyRow {
+    background-color: var(--amazon-blue);
+    text-align: center;
+    padding: 1rem 0 3rem;
+    color: #999;
+    font-size: 0.75rem;
+}

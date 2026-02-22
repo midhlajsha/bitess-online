@@ -1,15 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
 
 :root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --primary: #6366f1;
-  --primary-hover: #4f46e5;
-  --surface: #171717;
-  --surface-hover: #262626;
-  --border: #333333;
-  --text-muted: #a3a3a3;
-  --accent: #f43f5e;
+  /* Amazon-inspired Color Palette */
+  --amazon-blue: #131921;
+  --amazon-light-blue: #232f3e;
+  --amazon-yellow: #febd69;
+  --amazon-orange: #f3a847;
+  --amazon-gray: #eaeded;
+  --amazon-dark-gray: #0f1111;
+  --amazon-link: #007185;
+
+  --background: #ffffff;
+  --foreground: var(--amazon-dark-gray);
+  --surface: #ffffff;
+  --surface-alt: var(--amazon-gray);
+  --primary: #ffd814;
+  --primary-hover: #f7ca00;
+  --accent: var(--amazon-orange);
+  --text: var(--amazon-dark-gray);
+  --text-muted: #565959;
+  --border: #ddd;
+  --success: #007600;
 }
 
 @media (prefers-color-scheme: light) {
@@ -53,7 +64,7 @@ button {
 
 /* Base Utility Classes */
 .container {
-  max-width: 1200px;
+  max-width: 1500px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -62,38 +73,48 @@ button {
   position: relative;
 }
 
+/* Base Button Styles */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border-radius: 9999px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  font-size: 0.9rem;
 }
 
 .btn-primary {
   background-color: var(--primary);
-  color: #ffffff;
-  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.39);
+  border-color: #fcd200;
+  color: #0f1111;
+  box-shadow: 0 2px 5px rgba(213, 217, 217, 0.5);
 }
 
 .btn-primary:hover {
   background-color: var(--primary-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.5);
+  border-color: #f2c200;
 }
 
-.btn-outline {
-  background-color: transparent;
-  border: 1px solid var(--border);
-  color: var(--foreground);
+.btn-secondary {
+  background-color: #fff;
+  border-color: #d5d9d9;
+  color: #0f1111;
 }
 
-.btn-outline:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+.btn-secondary:hover {
+  background-color: #f7fafa;
+}
+
+/* Gradient Text compatibility fix */
+.gradient-text {
+  background-image: linear-gradient(90deg, var(--amazon-orange), #ff4d4d);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Header & Nav */
@@ -108,6 +129,7 @@ button {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
+
 @media (prefers-color-scheme: light) {
   .header {
     background: rgba(255, 255, 255, 0.8);
@@ -135,6 +157,7 @@ button {
     opacity: 0;
     transform: translateY(20px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -144,6 +167,18 @@ button {
 .animate-fade-in-up {
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-.delay-1 { animation-delay: 0.1s; opacity: 0; }
-.delay-2 { animation-delay: 0.2s; opacity: 0; }
-.delay-3 { animation-delay: 0.3s; opacity: 0; }
+
+.delay-1 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}

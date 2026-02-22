@@ -12,18 +12,26 @@ export default function ProductCard({ product }: { product: Product }) {
         <div className={styles.card}>
             <div className={styles.imageContainer}>
                 <img src={product.image} alt={product.name} className={styles.image} loading="lazy" />
-                <div className={styles.overlay}>
-                    <button className={`btn btn-primary ${styles.quickAdd}`} onClick={() => addToCart(product)}>
-                        Add to Cart
-                    </button>
-                </div>
             </div>
             <div className={styles.content}>
                 <h3 className={styles.name}>{product.name}</h3>
-                <p className={styles.description}>{product.description}</p>
-                <div className={styles.footer}>
-                    <span className={styles.price}>${product.price.toFixed(2)}</span>
+                <div className={styles.rating}>
+                    <span className={styles.stars}>★★★★☆</span>
+                    <span className={styles.count}>2,384</span>
                 </div>
+                <div className={styles.pricing}>
+                    <span className={styles.currency}>$</span>
+                    <span className={styles.priceWhole}>{Math.floor(product.price)}</span>
+                    <span className={styles.priceFraction}>{(product.price % 1).toFixed(2).split('.')[1]}</span>
+                </div>
+                <div className={styles.prime}>
+                    <span className={styles.primeCheck}>✓</span>
+                    <span className={styles.primeText}>prime</span>
+                    <span className={styles.deliveryText}>FREE delivery Tomorrow</span>
+                </div>
+                <button className={`btn btn-primary ${styles.addToCart}`} onClick={() => addToCart(product)}>
+                    Add to Cart
+                </button>
             </div>
         </div>
     );
