@@ -1,0 +1,162 @@
+[
+  {
+    "id": "prod_1",
+    "title": "Aura Pro Wireless ANC Headphones",
+    "category": "Audio",
+    "price": 299.99,
+    "originalPrice": 349.99,
+    "rating": 4.9,
+    "reviewCount": 328,
+    "stock": 14,
+    "isFeatured": true,
+    "isNew": true,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+    "description": "Engineered with studio-grade active noise cancellation, custom 40mm beryllium drivers, and up to 50 hours of battery life with ultra-low latency spatial audio soundscapes.",
+    "features": [
+      "Beryllium Drivers",
+      "50h Battery",
+      "Spatial Audio",
+      "Active Noise Cancellation"
+    ]
+  },
+  {
+    "id": "prod_2",
+    "title": "Aura Watch Ultra Titanium",
+    "category": "Wearables",
+    "price": 449,
+    "originalPrice": 499,
+    "rating": 4.8,
+    "reviewCount": 215,
+    "stock": 8,
+    "isFeatured": true,
+    "isNew": true,
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
+    "description": "Aerospace-grade titanium casing with sapphire crystal display, dual-frequency GPS, biometric health tracking, and 100m water resistance.",
+    "features": [
+      "Titanium Case",
+      "Sapphire Glass",
+      "Dual-GPS",
+      "ECG & SpO2 Monitoring"
+    ]
+  },
+  {
+    "id": "prod_3",
+    "title": "CyberPulse RGB Mechanical Keyboard",
+    "category": "Tech",
+    "price": 179.5,
+    "originalPrice": 199.99,
+    "rating": 4.7,
+    "reviewCount": 184,
+    "stock": 22,
+    "isFeatured": false,
+    "isNew": false,
+    "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?auto=format&fit=crop&w=800&q=80",
+    "description": "Hot-swappable magnetic hall-effect switches with rapid trigger, anodized CNC aluminum chassis, per-key RGB backlight, and sound-dampening gasket mount.",
+    "features": [
+      "Magnetic Switches",
+      "Hot-Swappable",
+      "CNC Aluminum",
+      "0.1mm Rapid Trigger"
+    ]
+  },
+  {
+    "id": "prod_4",
+    "title": "Aura Ring Horizon Smart Tracker",
+    "category": "Wearables",
+    "price": 279,
+    "originalPrice": 299,
+    "rating": 4.6,
+    "reviewCount": 97,
+    "stock": 12,
+    "isFeatured": true,
+    "isNew": false,
+    "image": "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=800&q=80",
+    "description": "Ultra-lightweight titanium smart ring measuring sleep staging, HRV, readiness recovery score, and core temperature trends without subscriptions.",
+    "features": [
+      "7-Day Battery",
+      "Waterproof 100m",
+      "HRV Tracking",
+      "Zero Subscription"
+    ]
+  },
+  {
+    "id": "prod_5",
+    "title": "Minimalist MagSafe Leather Backpack",
+    "category": "Accessories",
+    "price": 189.99,
+    "originalPrice": 220,
+    "rating": 4.9,
+    "reviewCount": 142,
+    "stock": 19,
+    "isFeatured": false,
+    "isNew": true,
+    "image": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80",
+    "description": "Handcrafted full-grain Italian leather laptop pack featuring magnetic quick-access pockets, padded 16-inch laptop compartment, and weatherproof YKK zippers.",
+    "features": [
+      "Full-Grain Leather",
+      "Weatherproof",
+      "16-inch Laptop Slot",
+      "Hidden Security Pocket"
+    ]
+  },
+  {
+    "id": "prod_6",
+    "title": "Aura Glow Smart Ambient Desk Lamp",
+    "category": "Home",
+    "price": 129.99,
+    "originalPrice": 149.99,
+    "rating": 4.8,
+    "reviewCount": 89,
+    "stock": 25,
+    "isFeatured": true,
+    "isNew": false,
+    "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=80",
+    "description": "Precision warm-to-cool LED desk illumination with integrated 15W wireless fast-charging base, touch slider control, and Matter smart home integration.",
+    "features": [
+      "15W Qi Charging",
+      "Matter Compatible",
+      "CRI 98 Color",
+      "Auto-Dimming Sensor"
+    ]
+  },
+  {
+    "id": "prod_7",
+    "title": "Acoustics Bamboo Desktop Speakers",
+    "category": "Audio",
+    "price": 219,
+    "originalPrice": 249,
+    "rating": 4.7,
+    "reviewCount": 116,
+    "stock": 10,
+    "isFeatured": false,
+    "isNew": false,
+    "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&w=800&q=80",
+    "description": "Sustainable solid bamboo cabinet active desktop studio monitors delivering crystal-clear mids, tight bass, and lossless Bluetooth 5.3 aptX HD audio.",
+    "features": [
+      "Solid Bamboo",
+      "Bluetooth 5.3 aptX",
+      "60W Peak Power",
+      "Subwoofer Output"
+    ]
+  },
+  {
+    "id": "prod_8",
+    "title": "Ergonomic Aluminium Laptop Stand",
+    "category": "Accessories",
+    "price": 69.99,
+    "originalPrice": 85,
+    "rating": 4.9,
+    "reviewCount": 310,
+    "stock": 40,
+    "isFeatured": false,
+    "isNew": false,
+    "image": "https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?auto=format&fit=crop&w=800&q=80",
+    "description": "Precision CNC milled aluminum alloy stand with adjustable dual-hinge height and angle controls for optimal ergonomic eye alignment.",
+    "features": [
+      "360° Rotation",
+      "CNC Aluminium",
+      "Heat Dissipation Vent",
+      "Folds Flat"
+    ]
+  }
+]

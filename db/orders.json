@@ -1,0 +1,30 @@
+[
+  {
+    "id": "ORD-650903",
+    "createdAt": "2026-08-01T17:06:44.127Z",
+    "items": [
+      {
+        "productId": "prod_1",
+        "title": "Aura Pro Wireless ANC Headphones",
+        "price": 299.99,
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
+        "category": "Audio",
+        "quantity": 1
+      }
+    ],
+    "subtotal": 299.99,
+    "discount": 0,
+    "tax": 23.999200000000002,
+    "shipping": 0,
+    "total": 323.9892,
+    "shippingAddress": {
+      "fullName": "FDFGDF",
+      "addressLine": "SDDFSDFSDF",
+      "city": "DFD",
+      "zip": "SDF",
+      "email": "DGDFHFGH@GMAIL.COM"
+    },
+    "paymentMethod": "Credit Card (Simulated)",
+    "status": "Processing"
+  }
+]
